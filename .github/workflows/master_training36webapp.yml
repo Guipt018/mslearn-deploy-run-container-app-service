@@ -30,8 +30,8 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
+        context: dotnet
         tags: training36.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_eaa03803faf0478e924b7626ac148162 }}/webimage:${{ github.sha }}
-        file: ./Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
